@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PELRC - Profile</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    function displayProfile(event) {
+      event.preventDefault();
+      document.getElementById("nameOutput").innerText = document.getElementById("name").value;
+      document.getElementById("emailOutput").innerText = document.getElementById("email").value;
+      document.getElementById("collegeOutput").innerText = document.getElementById("college").value;
+      document.getElementById("roleOutput").innerText = document.getElementById("role").value;
+      document.getElementById("skillsOutput").innerText = document.getElementById("skills").value;
+      document.querySelector(".profile-display").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo">PELRC</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="internship.html">Internships</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="profile.html" class="active">Profile</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="form-section">
+    <h2>Intern Profile Form</h2>
+    <form onsubmit="displayProfile(event)">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="text" id="college" placeholder="College Name" required />
+      <input type="text" id="role" placeholder="Internship Role" required />
+      <input type="text" id="skills" placeholder="Key Skills" required />
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section class="profile-display" style="display:none;">
+    <h2>Intern Profile</h2>
+    <p><strong>Name:</strong> <span id="nameOutput"></span></p>
+    <p><strong>Email:</strong> <span id="emailOutput"></span></p>
+    <p><strong>College:</strong> <span id="collegeOutput"></span></p>
+    <p><strong>Role:</strong> <span id="roleOutput"></span></p>
+    <p><strong>Skills:</strong> <span id="skillsOutput"></span></p>
+  </section>
+
+  <footer>
+    © 2025 PELRC. All Rights Reserved.
+  </footer>
+</body>
+</html>
